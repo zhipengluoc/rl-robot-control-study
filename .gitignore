@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+*.egg
+
+# 训练产出（体积大，不上传）
+results/
+checkpoints/
+tb/
+runs/
+wandb/
+logs/
+*.pt
+*.zip
+*.ckpt
+*.h5
+
+# 视频 / 图片产出（也不上传到 git，太大）
+*.mp4
+*.gif
+*.avi
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Notebook
+.ipynb_checkpoints/
+
+# JAX cache
+.jax_cache/
+
+# 个人草稿（防止意外推上去）
+scratch/
+TODO.private.md
