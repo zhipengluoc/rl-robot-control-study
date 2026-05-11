@@ -40,7 +40,8 @@
 - [ ] 开始写 ppo_minimal.py
 
 **实际产出**
-
+> 📝 学习笔记：[Feishu Wiki](https://my.feishu.cn/wiki/XXegw82Bpi23kVksjHYcCcU2nse)
+> （包含 PPO/GAE/SAC 等理论笔记。本仓库只放代码、实验结果、周报）
 （周日填）
 
 **踩坑 / 收获**

@@ -139,6 +139,21 @@ def compute_gae(rewards, values, dones, last_value, gamma, gae_lambda):
         delta_t = r_t + γ * V_{t+1} * (1 - done_{t+1}) - V_t
         A_t = delta_t + γ λ (1 - done_{t+1}) A_{t+1}
     """
+
+    advantages = torch.zeros_like(rewards)
+    lastgaelam = 0
+    for t in reversed(range(rewards.size(0))):
+        if t == rewards.size(0) - 1:
+            nextnonterminal = 1.0 - dones[t]
+            nextvalues = last_value
+        else:
+            nextnonterminal = 1.0 - dones[t + 1]
+            nextvalues = values[t + 1]
+        delta = rewards[t] + gamma * nextvalues * nextnonterminal - values[t]
+        advantages[t] = lastgaelam = delta + gamma * gae_lambda * nextnonterminal * lastgaelam
+    returns = advantages + values
+    return advantages, returns
+
     raise NotImplementedError("写 GAE 是这个文件最重要的练习之一，自己实现！")
 
 
